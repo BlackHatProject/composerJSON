@@ -3,5 +3,7 @@
     "description": "Ejemplo y prueba de Composer",
     "type": "project",
     "license": "MIT",
-    "require": {}
+    "require": {
+        "symfony/http-foundation": "^5.3"
+    }
 }
