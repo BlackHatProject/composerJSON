@@ -4,10 +4,11 @@ require 'vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 
 $request = Request::createFromGlobals();
-$response = new Response();
 
 $msj = "Abominable Putridity";
 
@@ -18,13 +19,12 @@ $lista = array(
     "apellido" => "Walace"
 );
 
-$listaJSON = array(
-    $msj,
-    $number,
-    $lista
-);
+$request->query->all();
 
-$json = json_encode($listaJSON);
+$response = new JsonResponse([
+    "numero" => $number,
+    "mensaje" => $msj,
+    "lista" => $lista
+]);
 
-$response->setContent(json_encode($json));
 $response->send();
