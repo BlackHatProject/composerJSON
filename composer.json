@@ -1,0 +1,7 @@
+{
+    "name": "soultrooper/composer",
+    "description": "Ejemplo y prueba de Composer",
+    "type": "project",
+    "license": "MIT",
+    "require": {}
+}
